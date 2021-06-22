@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Let me ask
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Plataforma para profissionais que criam conteúdo ao vivo possam gerenciar perguntas feitas por seus espectadores. Este projeto foi desenvolvido durante a NLW Together promovida pela Rocketseat.
 
-## Available Scripts
+## Público Alvo
 
-In the project directory, you can run:
+- Profissionais(Professores, Streamers) que criam conteúdo por meio de transmissões ao vivo através da Internet em plataformas como Youtube ou Twich por exemplo;
+Professores ou educadores: que realizam aulas ao vivo ou gravadas disponibilizadas através da Internet;
+Espectadores de criadores de conteúdo online.
 
-### `npm start`
+## Tecnologias
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ReactJs;
+- Google Firebase;
+- Saas.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Layout da aplicação
 
-### `npm test`
+O layout da aplicação desenvolvido pela design Rebecca Gonzalez(@rebeccagonzalez) e pode ser acessado pelo endereço a seguir:
+[https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask?node-id=0%3A1]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para salvar o layout na sua conta no Figma, acesse
+[https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate]
 
-### `npm run build`
+## Sprints
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[x] Aula 01
+[ ] Aula 02
+[ ] Aula 03
+[ ] Aula 04
+[ ] Aula 05
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Glossário
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Abaixo a descrição de alguns termos ligados ao negócio (ambiente onde a  aplicação será utilizada).
 
-### `npm run eject`
+- Streamer: Profissional realiza transmissões ao vivo em plataformas na Internet como Youtube;
+- Live: Transmissão em vídeo ao vivo através da Internet.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Requerimentos da aplicação
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Servidor ou computador com Node 14 ou superior.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Para execução em ambiente de desenvolvimento local
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A) Faça o download deste repositório para máquina local
 
-## Learn More
+Exemplo:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+$ git clone https://github.com/fbnnd1/nlw-together-letmeask.git && cd nlw-together-letmeask
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+B) Instale todas as dependências do projeto
+
+Exemplo:
+
+```bash
+$ npm install
+```
+
+C) No prompt de comando ou shell, execute o comando:
+
+Servidor backend com as informações sobre o Podcast
+
+```bash
+$ npm start
+```
+
+## Agradecimentos
+
+Segue o agradecimento a toda a comunidade de devs que participou do evento e membros da Rocketseat, em especial ao professor Diego Fernandes.
+
+## Links externos
+
+- Rocketseat (https://rocketseat.com.br)
+
