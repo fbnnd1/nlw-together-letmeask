@@ -5,8 +5,8 @@ Plataforma para profissionais que criam conteúdo ao vivo possam gerenciar pergu
 ## Público Alvo
 
 - Profissionais(Professores, Streamers) que criam conteúdo por meio de transmissões ao vivo através da Internet em plataformas como Youtube ou Twich por exemplo;
-Professores ou educadores: que realizam aulas ao vivo ou gravadas disponibilizadas através da Internet;
-Espectadores de criadores de conteúdo online.
+- Professores ou educadores: que realizam aulas ao vivo ou gravadas disponibilizadas através da Internet;
+- Espectadores de criadores de conteúdo online.
 
 ## Tecnologias
 
