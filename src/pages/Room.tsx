@@ -19,7 +19,7 @@ type RoomParans = {
 }
 
 export function Room() {
-    const { user } = useAuth();
+    const { user, signInWithGoogle } = useAuth();
     const parans = useParams<RoomParans>();
     const [newQuestion, setNewQuestion] = useState("");
     const roomId = parans.id;
@@ -52,7 +52,7 @@ export function Room() {
         setNewQuestion('');
     }
 
-    async function handleLikedQuestion(questionId: string, likeId: string | null) {
+    async function handleLikedQuestion(questionId: string, likeId: string | undefined) {
         if (likeId) {
             const newLike = await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
         } else {
@@ -92,7 +92,7 @@ export function Room() {
                                     <span>{user.name}</span>
                                 </div>
                             ) : (
-                                <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+                                <span>Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>.</span>
                             )
                         }
                         <Button type="submit" disabled={!user}>Enviar pergunta</Button>
