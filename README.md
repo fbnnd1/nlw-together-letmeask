@@ -4,15 +4,35 @@ Plataforma para profissionais que criam conteúdo ao vivo possam gerenciar pergu
 
 ## Público Alvo
 
-- Profissionais(Professores, Streamers) que criam conteúdo por meio de transmissões ao vivo através da Internet em plataformas como Youtube ou Twich por exemplo;
-- Professores ou educadores: que realizam aulas ao vivo ou gravadas disponibilizadas através da Internet;
-- Espectadores de criadores de conteúdo online.
+- Profissionais que criam conteúdo por meio de transmissões ao vivo através da Internet em plataformas como Youtube ou Twich por exemplo;  
+- Espectadores de criadores de conteúdo online.  
 
 ## Tecnologias
 
-- ReactJs;
-- Google Firebase;
+- ReactJs;  
+- Typescript;  
+- Google Firebase;  
 - Saas.
+
+## Fucncionalidades
+
+### Criador(a) de conteúdo
+
+- Criação de salas;  
+- Destacar perguntas;    
+- Marcar pergunta como respondida;   
+- Deletar perguntas;  
+- Copiar a identificação da sala para compartilhar.  
+
+### Espectador(a)
+
+- Realizar peguntas;  
+- Marcar com "gostei" perguntas (semelhante ao "curtir" do Facebook ou Youtube);   
+- Copiar a identificação da sala para compartilhar.  
+
+### Observação.
+
+Para criação de salas, envio de perguntas e marcação de perguntas, é necessário o internauta esteja logado em sua conta de usuário do Google.  
 
 ## Layout da aplicação
 
@@ -21,21 +41,6 @@ O layout da aplicação desenvolvido pela design Rebecca Gonzalez(@rebeccagonzal
 
 Para salvar o layout na sua conta no Figma, acesse
 [https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate]
-
-## Sprints
-
-[x] Aula 01
-[ ] Aula 02
-[ ] Aula 03
-[ ] Aula 04
-[ ] Aula 05
-
-## Glossário
-
-Abaixo a descrição de alguns termos ligados ao negócio (ambiente onde a  aplicação será utilizada).
-
-- Streamer: Profissional realiza transmissões ao vivo em plataformas na Internet como Youtube;
-- Live: Transmissão em vídeo ao vivo através da Internet.
 
 ## Requerimentos da aplicação
 
