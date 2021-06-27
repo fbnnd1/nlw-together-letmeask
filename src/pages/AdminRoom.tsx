@@ -22,7 +22,7 @@ type RoomParans = {
 }
 
 export function AdminRoom() {
-    const { user } = useAuth();
+    const { user, signOut } = useAuth();
     const history = useHistory();
     const parans = useParams<RoomParans>();
     const roomId = parans.id;
@@ -64,7 +64,12 @@ export function AdminRoom() {
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
-                        {authorRoomId === user?.id && (<Button isOutlined onClick={handleEndRoom} disabled={roomEnded}>Encerrar Sala</Button>)}
+                        {authorRoomId === user?.id && 
+                        (   <>
+                                <Button isOutlined onClick={handleEndRoom} disabled={roomEnded}>Encerrar Sala</Button>
+                                <Button isOutlined onClick={signOut}>Sair</Button>
+                            </>
+                        )}
                     </div>
                 </div>
             </header>

@@ -13,7 +13,7 @@ import {Button} from '../components/Button';
 import '../styles/auth.scss';
 
 export function NewRoom() {
-    const {user} = useAuth()
+    const {user, signOut} = useAuth();
     const [newRoom, setNewRoom] = useState('');
     const history = useHistory();
 
@@ -76,6 +76,9 @@ export function NewRoom() {
                     </form>
                     <p>
                         Quer entrar em uma sala existente <Link to="/">Clique aqui</Link>
+                    </p>
+                    <p>
+                        Para sair da aplicação, <button className="btn-singOut" onClick={signOut}>clique aqui</button>.
                     </p>
                 </div>
             </main>

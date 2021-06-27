@@ -19,7 +19,7 @@ type RoomParans = {
 }
 
 export function Room() {
-    const { user, signInWithGoogle } = useAuth();
+    const { user, signInWithGoogle, signOut } = useAuth();
     const parans = useParams<RoomParans>();
     const [newQuestion, setNewQuestion] = useState("");
     const roomId = parans.id;
@@ -90,6 +90,7 @@ export function Room() {
                                 <div className="user-info">
                                     <img src={user.avatar} alt={user.name} />
                                     <span>{user.name}</span>
+                                    <button onClick={signOut}>Sair</button>
                                 </div>
                             ) : (
                                 <span>Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>.</span>
