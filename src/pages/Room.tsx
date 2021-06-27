@@ -24,7 +24,7 @@ export function Room() {
     const [newQuestion, setNewQuestion] = useState("");
     const roomId = parans.id;
 
-    const {questions, title} = useRoom(roomId);
+    const {questions, title, roomEnded} = useRoom(roomId);
 
     async function handleSendQuestion(event: FormEvent) {
         event.preventDefault();
@@ -95,7 +95,8 @@ export function Room() {
                                 <span>Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>.</span>
                             )
                         }
-                        <Button type="submit" disabled={!user}>Enviar pergunta</Button>
+                        { roomEnded && (<strong>Sala encerrada pelo administrador.</strong>) }
+                        <Button type="submit" disabled={!user || roomEnded}>Enviar pergunta</Button>
                     </div>
                 </form>
 

@@ -1,9 +1,6 @@
-import { FormEvent, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { database } from '../services/firebase';
-
-//import { useAuth } from '../hooks/useAuth';
 
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
@@ -27,12 +24,14 @@ export function AdminRoom() {
     const parans = useParams<RoomParans>();
     const roomId = parans.id;
 
-    const {questions, title} = useRoom(roomId);
+    const {questions, title, roomEnded, setRoomEnded} = useRoom(roomId);
 
     async function handleEndRoom() {
         await database.ref(`rooms/${roomId}`).update({
             endedAt: new Date(),
         });
+
+        setRoomEnded(true);
 
         history.push("/");
     }
@@ -62,14 +61,14 @@ export function AdminRoom() {
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
-                        <Button isOutlined onClick={handleEndRoom}>Encerrar Sala</Button>
+                        <Button isOutlined onClick={handleEndRoom} disabled={roomEnded}>Encerrar Sala</Button>
                     </div>
                 </div>
             </header>
         
             <main>
                 <div className="room-title">
-                    <h1>Sala {title}</h1>
+                    <h1>Sala {title} {roomEnded && ("(Encerrada)")}</h1>
                     {questions.length > 0 && <span>{questions.length} perguntas</span> }
                 </div>
 
