@@ -35,6 +35,23 @@ export function NewRoom() {
         history.push(`/myroom/${firebaseRoom.key}`)
     }
 
+    if (!user) {
+        return (
+            <div id="page-auth">
+                <aside>
+                    <img src={illustrationImg} alt="Ilustração simbolizando pergunta e resposta" />
+                    <strong>Crie uma sala de Q&amp;A ao-vivo</strong>
+                    <p>Tire as dúvidas da audiência em tempo real.</p>
+                </aside>
+                <main>
+                    <div className="main-content">
+                        <h3>Obtendo informações do usuário ...</h3>
+                    </div>
+                </main>
+            </div>
+        );
+    }
+
     return (
         <div id="page-auth">
             <aside>
@@ -53,7 +70,7 @@ export function NewRoom() {
                             placeholder="Nome da sala"
                             onChange={event => setNewRoom(event.target.value)}
                         />
-                        <Button type="submit">
+                        <Button type="submit" disabled={!user}>
                             Criar sala
                         </Button>
                     </form>

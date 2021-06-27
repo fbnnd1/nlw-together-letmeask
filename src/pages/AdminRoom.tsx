@@ -5,7 +5,10 @@ import { database } from '../services/firebase';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
+
 import { useRoom } from '../hooks/useRoom';
+
+import { useAuth } from '../hooks/useAuth';
 
 import logoImg from '../assets/images/logo.svg';
 import deleteImg from '../assets/images/delete.svg';
@@ -19,12 +22,12 @@ type RoomParans = {
 }
 
 export function AdminRoom() {
-    //const { user } = useAuth();
+    const { user } = useAuth();
     const history = useHistory();
     const parans = useParams<RoomParans>();
     const roomId = parans.id;
 
-    const {questions, title, roomEnded, setRoomEnded} = useRoom(roomId);
+    const {questions, title, roomEnded, setRoomEnded, authorRoomId} = useRoom(roomId);
 
     async function handleEndRoom() {
         await database.ref(`rooms/${roomId}`).update({
@@ -61,7 +64,7 @@ export function AdminRoom() {
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
-                        <Button isOutlined onClick={handleEndRoom} disabled={roomEnded}>Encerrar Sala</Button>
+                        {authorRoomId === user?.id && (<Button isOutlined onClick={handleEndRoom} disabled={roomEnded}>Encerrar Sala</Button>)}
                     </div>
                 </div>
             </header>
@@ -82,7 +85,7 @@ export function AdminRoom() {
                                 isAnswered={question.isAnswered} 
                                 isHighLighted={question.isHighLighted}
                             >
-                                {!question.isAnswered && (
+                                {authorRoomId === user?.id && !question.isAnswered && (
                                     <>
                                         <button
                                             type="button"
@@ -100,12 +103,14 @@ export function AdminRoom() {
                                     </>
                                 )}
 
-                                <button
-                                    type="button"
-                                    onClick={() => handleDeleteQuestion(question.id)}
-                                >
-                                    <img src={deleteImg} alt="Remover pergunta" />
-                                </button>
+                                {authorRoomId === user?.id && (
+                                    <button
+                                        type="button"
+                                        onClick={() => handleDeleteQuestion(question.id)}
+                                    >
+                                        <img src={deleteImg} alt="Remover pergunta" />
+                                    </button>
+                                )}
                             </Question>
                         );
                     })}
