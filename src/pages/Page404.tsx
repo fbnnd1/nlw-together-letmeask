@@ -6,7 +6,7 @@ export function Page404 () {
     return (
         <div className="main-content">
             <img src={logoImg} alt="Letmeask" />
-            <h1>Página não localizada</h1>
+            <h1>Página não localizada.</h1>
         </div>
     );
 }
