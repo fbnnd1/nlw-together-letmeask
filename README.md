@@ -43,6 +43,7 @@ Foram aplicados os seguintes aperfeiçoamentos:
 - Página de erro: "Página não localizada".
 
 
+
 ## Layout da aplicação
 
 O layout da aplicação desenvolvido pela design Rebecca Gonzalez(@rebeccagonzalez) e pode ser acessado pelo endereço a seguir:
