@@ -4,9 +4,46 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: #f8f8f8;
+    --primary-color: #835afd;
+    --secondary-color: #e559f9;
+    --separator-color: #a8a8b3;
+    --border-room-color: #e2e2e2;
+    --text-primary-color: #29292e;
+    --light-color: #FFF;
+    
+    --gray1: #737388;
+    --red1: #ea4335;
+
+    --background-question-box: #fefefe;
+    --background-question-highlighted-box: #F4F0FF;
+    --background-question-answered-box: #dbdcdd;
+
+    --black-color-rgba004: rgba(0,0,0, 0.04);
+    --black-color-rgba084: rgba(0,0,0, 0.84);
+   
+    --textarea-background-color: #fefefe;
+
+    --theme-button-border-color: #c6c6c6;
+
+    --dark-theme-background-color: #272727;
+    --dark-theme-separator-color: #929292;
+    --dark-theme-border-room-color: #1d1d1d;
+    --dark-theme-text-primary-color: #d6d6d1;
+    --dark-theme-light-color: #000;
+
+    --dark-separator-color: #929292;
+}
+
 body {
-    background: #f8f8f8;
-    color: #29292e;
+    background: var(--background-color);
+    color: var(--text-primary-color);
+}
+
+body.dark-theme {
+    background: var(--dark-theme-background-color);
+    color: var(--dark-theme-text-primary-color);
 }
 
 body, input, textarea, button {

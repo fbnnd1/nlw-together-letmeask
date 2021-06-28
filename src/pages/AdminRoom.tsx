@@ -5,12 +5,14 @@ import { database } from '../services/firebase';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
+import { ThemeButton } from '../components/ThemeButton';
 
 import { useRoom } from '../hooks/useRoom';
-
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
 import logoImg from '../assets/images/logo.svg';
+import darkThemelogoImg from '../assets/images/dark-theme-logo.svg';
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
 import answerImg from '../assets/images/answer.svg';
@@ -23,6 +25,8 @@ type RoomParans = {
 
 export function AdminRoom() {
     const { user, signOut } = useAuth();
+    const { theme } = useTheme();
+
     const history = useHistory();
     const parans = useParams<RoomParans>();
     const roomId = parans.id;
@@ -58,10 +62,17 @@ export function AdminRoom() {
     }
 
     return (
-        <div id="page-room">
+        <div id="page-room" className={`${theme === "dark" ? "dark-theme" : ""}`}>
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <div>
+                        {
+                            theme === "dark" 
+                            ? ( <img src={darkThemelogoImg} alt="Letmeask" />) 
+                            : ( <img src={logoImg} alt="Letmeask" />) 
+                        }
+                        <ThemeButton />
+                    </div>
                     <div>
                         <RoomCode code={roomId} />
                         {authorRoomId === user?.id && 

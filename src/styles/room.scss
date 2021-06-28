@@ -1,7 +1,7 @@
 #page-room {
     header {
         padding: 24px;
-        border-bottom: 1px solid #e2e2e2;
+        border-bottom: 1px solid var(--border-room-color);
 
         .content {
             max-width: 1120px;
@@ -18,7 +18,7 @@
                 display: flex;
                 gap: 16px;
 
-                button {
+                button:not(#theme-button) {
                     height: 40px;
                 }
             }
@@ -37,15 +37,15 @@
             h1 {
                 font-family: 'Poppins', sans-serif;
                 font-size: 24px;
-                color: #29292e;
+                color: var(--text-primary-color);
             }
 
             span {
                 margin-left: 16px;
-                background: #e559f9;
+                background: var(--secondary-color);
                 border-radius: 9999px;
                 padding: 8px 16px;
-                color: #FFF;
+                color: var(--light-color);
                 font-weight: 500;
                 font-size: 14px;
             }
@@ -57,8 +57,8 @@
                 border: 0;
                 padding: 16px;
                 border-radius: 8px;
-                background: #fefefe;
-                box-shadow: 0 2px 12px rgba(0,0,0, 0.04);
+                background: var(--textarea-background-color);
+                box-shadow: 0 2px 12px var(--black-color-rgba004);
                 resize: vertical;
                 min-height: 130px;
             }
@@ -81,14 +81,14 @@
 
                     span {
                         margin-left: 8px;
-                        color: #29292e;
+                        color: var(--text-primary-color);
                         font-weight: 500;
                         font-size: 14px;
                     }
 
                     button {
                         margin-left: 8px;
-                        color: #e559f9;
+                        color: var(--secondary-color);
                         text-decoration: underline;
                         background-color: transparent;
                         border-style: none;
@@ -98,13 +98,13 @@
 
                 > span {
                     font-size: 14px;
-                    color: #737388;
+                    color: var(--gray1);
                     font-weight: 500;
 
                     button {
                         background: transparent;
                         border: 0;
-                        color: #835afd;
+                        color: var(--primary-color);
                         text-decoration: underline;
                         font-size: 14px;
                         font-weight: 500;
@@ -116,6 +116,30 @@
 
         .question-list {
             margin-top: 32px;
+        }
+    }
+
+    &.dark-theme {
+        header {
+            border-bottom: 1px solid var(--dark-theme-border-room-color);
+        }
+    
+        main {
+            .room-title { 
+                h1 {
+                    color: var(--dark-theme-text-primary-color);
+                }
+            }
+    
+            form {
+                .form-footer {  
+                    .user-info {
+                        span {   
+                            color: var(--dark-theme-text-primary-color);
+                        }
+                    }
+                }
+            }
         }
     }
 }

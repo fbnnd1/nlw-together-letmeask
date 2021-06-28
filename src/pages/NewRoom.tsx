@@ -3,17 +3,22 @@ import { Link, useHistory } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
+import darkThemelogoImg from '../assets/images/dark-theme-logo.svg';
 
 import { database } from '../services/firebase';
 
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
+import { ThemeButton } from '../components/ThemeButton';
 import {Button} from '../components/Button';
 
 import '../styles/auth.scss';
 
 export function NewRoom() {
     const {user, signOut} = useAuth();
+    const {theme} = useTheme();
+    
     const [newRoom, setNewRoom] = useState('');
     const history = useHistory();
 
@@ -37,8 +42,9 @@ export function NewRoom() {
 
     if (!user) {
         return (
-            <div id="page-auth">
+            <div id="page-auth"  className={`${theme === "dark" ? "dark-theme" : ""}`}>
                 <aside>
+                    <ThemeButton isFixed />
                     <img src={illustrationImg} alt="Ilustração simbolizando pergunta e resposta" />
                     <strong>Crie uma sala de Q&amp;A ao-vivo</strong>
                     <p>Tire as dúvidas da audiência em tempo real.</p>
@@ -53,15 +59,20 @@ export function NewRoom() {
     }
 
     return (
-        <div id="page-auth">
+        <div id="page-auth" className={`${theme === "dark" ? "dark-theme" : ""}`}>
             <aside>
+                <ThemeButton isFixed />
                 <img src={illustrationImg} alt="Ilustração simbolizando pergunta e resposta" />
                 <strong>Crie uma sala de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da audiência em tempo real.</p>
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    {
+                        theme === "dark" 
+                        ? ( <img src={darkThemelogoImg} alt="Letmeask" />) 
+                        : ( <img src={logoImg} alt="Letmeask" />) 
+                    }
                     <h1>{user?.name}</h1>
                     <h2>Criar uma nova sala</h2>
                     <form onSubmit={handleCreateRoom}>

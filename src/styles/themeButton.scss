@@ -1,0 +1,50 @@
+#theme-button {
+    width: 100px;
+    background-color: var(--primary-color);
+    height:25px;
+    width:50px;
+    border-radius: 25px;
+    border: 1px solid var(--light-color);
+    
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color:var(--light);
+
+    img:first-child {
+        display: none;
+        margin-left: 4px;
+    }
+
+    img:last-child {
+        display: inline;
+        margin-right: 4px;
+    }
+
+    div {
+        background-color: var(--light-color);
+        border: 1px solid var(--theme-button-border-color);
+        width: 25px;
+        height: 25px;   
+        border-radius: 50%;
+        margin: 0 auto 0 0;
+    }
+
+    &.dark-theme {
+
+        img:first-child {
+            display: inline;
+        }
+
+        img:last-child {
+            display: none;
+        }
+    }
+
+    &.is-fixed{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}

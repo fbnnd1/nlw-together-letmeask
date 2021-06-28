@@ -5,14 +5,16 @@
 
     aside {
         flex: 7;
-        background: #835afd;
-        color: #FFF;
+        background: var(--primary-color);
+        color: var(--light-color);
 
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         padding: 120px 88px;
+
+        position: relative;
 
         img {
             max-width: 328px;
@@ -28,7 +30,7 @@
             font-size: 24px;
             line-height: 32px;
             margin-top: 16px;
-            color: #f8f8f8;
+            color: var (--background-color);
         }
     }
 
@@ -65,12 +67,14 @@
                 height: 50px;
                 border-radius: 8px;
                 padding: 0 16px;
-                background: #FFF;
-                border: 1px solid #a8a8b3;
+                background: var(--light-color);
+                border: 1px solid var(--separator-color);
 
                 margin: 32px 0;
                 display: flex;
                 align-items: center;
+
+                color: var(--text-primary-color);
             }
 
             button {
@@ -84,15 +88,15 @@
 
         p {
             font-size: 14px;
-            color: #737388;
+            color: var(--gray1);
             margin-top: 16px;
 
             a {
-                color: #e559f9;
+                color: var(--secondary-color);
             }
 
             .btn-singOut {
-                color: #e559f9;
+                color: var(--secondary-color);
                 text-decoration: underline;
                 background-color: transparent;
                 border-style: none;
@@ -104,15 +108,16 @@
 
     .create-room {
         margin-top: 64px;
-        height: 50px;
+        height: 60px;
         border-radius: 8px;
         font-weight: 500;
-        background: #ea4335;
-        color: #fff;
+        background: var(--red1);
+        color: var(--light-color);
     
         display: flex;
         align-items: center;
         justify-content: center;
+        gap:5px;
     
         cursor: pointer;
         border: 0;
@@ -130,7 +135,7 @@
 
     .separator {
         font-size: 14px;
-        color: #a8a8b3;
+        color: var(--separator-color);
         
         margin: 32px 0;
         display: flex;
@@ -140,7 +145,7 @@
             content: '';
             flex: 1;
             height: 1px;
-            background-color: #a8a8b3;
+            background-color: var(--separator-color);
             margin-right: 16px;
         }
 
@@ -148,9 +153,24 @@
             content: '';
             flex: 1;
             height: 1px;
-            background-color: #a8a8b3;
+            background-color: var(--separator-color);
             margin-left: 16px;
         }
     }
 
+    /*Dark Theme*/
+    &.dark-theme {
+
+        .separator {
+            color: var(--dark-theme-separator-color);
+    
+            &::before {
+                background-color: var(--dark-theme-separator-color);       
+            }
+    
+            &::after {
+                background-color: var(--dark-theme-separator-color);
+            }
+        }
+    }
 }

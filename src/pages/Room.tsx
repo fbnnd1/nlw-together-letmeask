@@ -4,13 +4,16 @@ import { useParams } from 'react-router-dom';
 import { database } from '../services/firebase';
 
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
+import { ThemeButton } from '../components/ThemeButton';
 import { useRoom } from '../hooks/useRoom';
 
 import logoImg from '../assets/images/logo.svg';
+import darkThemelogoImg from '../assets/images/dark-theme-logo.svg';
 
 import '../styles/room.scss';
 
@@ -20,6 +23,8 @@ type RoomParans = {
 
 export function Room() {
     const { user, signInWithGoogle, signOut } = useAuth();
+    const {theme } = useTheme();
+    
     const parans = useParams<RoomParans>();
     const [newQuestion, setNewQuestion] = useState("");
     const roomId = parans.id;
@@ -54,19 +59,26 @@ export function Room() {
 
     async function handleLikedQuestion(questionId: string, likeId: string | undefined) {
         if (likeId) {
-            const newLike = await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
+            await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove();
         } else {
-            const newLike = await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
+            await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
                 authorId: user?.id,
             });
         }
     }
 
     return (
-        <div id="page-room">
+        <div id="page-room" className={`${theme === "dark" ? "dark-theme" : ""} `}>
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="Letmeask" />
+                    <div>
+                        {
+                            theme === "dark" 
+                            ? ( <img src={darkThemelogoImg} alt="Letmeask" />) 
+                            : ( <img src={logoImg} alt="Letmeask" />) 
+                        }
+                        <ThemeButton />
+                    </div>
                     <RoomCode code={roomId} />
                 </div>
             </header>
