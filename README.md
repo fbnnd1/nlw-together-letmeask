@@ -12,7 +12,7 @@ Plataforma para profissionais que criam conteúdo ao vivo possam gerenciar pergu
 - ReactJs;  
 - Typescript;  
 - Google Firebase;  
-- Saas.
+- Sass.
 
 ## Fucncionalidades
 
@@ -32,19 +32,42 @@ Plataforma para profissionais que criam conteúdo ao vivo possam gerenciar pergu
 
 ### Observação.
 
-Para criação de salas, envio de perguntas e marcação de perguntas, é necessário o internauta esteja logado em sua conta de usuário do Google.  
+Para criação de salas, envio de perguntas e marcação de perguntas, é necessário que o internauta esteja logado em sua conta de usuário do Google.  
+
+## Aperfeiçoamentos
+
+Foram aplicados os seguintes aperfeiçoamentos:
+
+- Aperfeiçoamento da checagens de autorização;  
+- Tema escuro;  
+- Página de erro de  "Página não localizada".
+
 
 ## Layout da aplicação
 
 O layout da aplicação desenvolvido pela design Rebecca Gonzalez(@rebeccagonzalez) e pode ser acessado pelo endereço a seguir:
-[https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask?node-id=0%3A1]
+https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask?node-id=0%3A1
 
 Para salvar o layout na sua conta no Figma, acesse
-[https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate]
+https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate
 
-## Requerimentos da aplicação
+## Requerimentos para execução em ambiente de desenvolvimento
 
-* Servidor ou computador com Node 14 ou superior.
+1) Servidor ou computador com Node 14 ou superior.
+
+2) Arquivo env.local na pasta raiz do projeto com as variáveis de ambiente dos serviços de autenticação e realtime database do firebase.
+
+Exemplo:
+
+```bash
+REACT_APP_APIKEY = "sua_apikey"
+REACT_APP_AUTHDOMAIN = "AAA.TTT"
+REACT_APP_DATABASEUR L= "AAA.BBB"
+REACT_APP_PROJECTID = "AAA"
+REACT_APP_STORAGEBUCKET = "AAA"
+REACT_APP_MESSAGINGSENDERID = "000"
+REACT_APP_APPID = "00"
+```
 
 ### Para execução em ambiente de desenvolvimento local
 
@@ -65,8 +88,6 @@ $ npm install
 ```
 
 C) No prompt de comando ou shell, execute o comando:
-
-Servidor backend com as informações sobre o Podcast
 
 ```bash
 $ npm start
