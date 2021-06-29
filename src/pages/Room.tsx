@@ -87,6 +87,7 @@ export function Room() {
                 <div className="room-title">
                     <h1>Sala {title}</h1>
                     {questions.length > 0 && <span>{questions.length} perguntas</span> }
+                    { roomEnded && (<strong>Sala encerrada pelo administrador.</strong>) }
                 </div>
 
                 <form onSubmit={handleSendQuestion}>
@@ -108,7 +109,6 @@ export function Room() {
                                 <span>Para enviar uma pergunta, <button onClick={signInWithGoogle}>faça seu login</button>.</span>
                             )
                         }
-                        { roomEnded && (<strong>Sala encerrada pelo administrador.</strong>) }
                         <Button type="submit" disabled={!user || roomEnded}>Enviar pergunta</Button>
                     </div>
                 </form>
