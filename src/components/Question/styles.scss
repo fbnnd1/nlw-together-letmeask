@@ -81,3 +81,19 @@
     }
 }
 
+/*Breakpoints*/
+@media (max-width: 375px) {
+    .question {
+        p {
+            text-align: center;
+        }
+        
+        footer {
+            flex-direction: column;
+
+            .user-info {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

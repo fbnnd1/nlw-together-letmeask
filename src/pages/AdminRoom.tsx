@@ -64,7 +64,7 @@ export function AdminRoom() {
     return (
         <div id="page-room" className={`${theme === "dark" ? "dark-theme" : ""}`}>
             <header>
-                <div className="content">
+                <div className="content admin-room-header">
                     <div>
                         {
                             theme === "dark" 

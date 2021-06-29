@@ -174,3 +174,38 @@
         }
     }
 }
+
+/*Breakpoints*/
+@media (max-width: 768px) {
+    #page-auth {
+        aside {
+            padding: 120px 20px;
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    #page-auth {
+        flex-direction: column;
+
+        aside {
+            padding: 20px 20px;
+            display: flex;
+            align-items: center;
+
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 590px) {
+    #page-auth {
+        aside {
+            strong {
+                margin-top: 30px;
+            }
+        }
+    }
+}
